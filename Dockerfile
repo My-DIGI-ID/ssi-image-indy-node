@@ -1,6 +1,6 @@
 FROM  bcgovimages/von-image:node-1.12-4 
 USER root
-RUN apt-get update && apt-get install -y jq
+RUN apt-get update && apt-get upgrade -y && apt-get install -y jq
 RUN mkdir /var/log/indy 
 RUN mkdir /var/lib/indy 
 RUN mkdir /etc/indy/
