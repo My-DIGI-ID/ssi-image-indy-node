@@ -20,7 +20,7 @@ NODE_NAME='<your node name>'
 mkdir $NETWORK_NAME
 cp pool_transactions_genesis $NETWORK_NAME/
 cp domain_transactions_genesis $NETWORK_NAME/
-docker run -v --rm $(pwd)/indy_config.py /etc/indy/indy_config.py -v $(pwd)/$NETWORK_NAME /var/lib/indy/$NETWORK_NAME  ssi-indy-node init_indy_keys --name $NODE_NAME --seed $SEED
-docker run -d -v  $(pwd)/indy_config.py /etc/indy/indy_config.py -v $(pwd)/$NETWORK_NAME /var/lib/indy/$NETWORK_NAME  ssi-indy-node
+docker run -v --rm $(pwd)/indy_config.py:/etc/indy/indy_config.py -v $(pwd)/$NETWORK_NAME:/var/lib/indy/$NETWORK_NAME  ssi-indy-node init_indy_keys --name $NODE_NAME --seed $SEED
+docker run -d -v  $(pwd)/indy_config.py:/etc/indy/indy_config.py -v $(pwd)/$NETWORK_NAME:/var/lib/indy/$NETWORK_NAME  ssi-indy-node
 
 ```
